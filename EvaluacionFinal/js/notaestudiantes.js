@@ -2,34 +2,34 @@
 var  json_estudiantes=
 [
     {
-        "codigo":"201708-01","nombre":"Javier Suarez","nota":4.2
+        "codigo":"201708-01","nombre":"Javier Suarez","nota":84
     },
     {
-        "codigo":"201708-02","nombre":"Andrea Romero","nota":3.6
+        "codigo":"201708-02","nombre":"Andrea Romero","nota":66
     },
     {
-        "codigo":"201708-03","nombre":"Sergio Amaya","nota":3.0
+        "codigo":"201708-03","nombre":"Sergio Amaya","nota":60
     },
     {
-        "codigo":"201708-04","nombre":"Andres Rodriguez","nota":2.9
+        "codigo":"201708-04","nombre":"Andres Rodriguez","nota":59
     },
     {
-        "codigo":"201708-05","nombre":"Juana Mora","nota":3.3
+        "codigo":"201708-05","nombre":"Juana Mora","nota":71
     },
     {
-        "codigo":"201708-06","nombre":"Gerardo Hernandez","nota":4.9
+        "codigo":"201708-06","nombre":"Gerardo Hernandez","nota":99
     },
     {
-        "codigo":"201708-07","nombre":"Alexandra Ladino","nota":1.8
+        "codigo":"201708-07","nombre":"Alexandra Ladino","nota":28
     },
     {
-        "codigo":"201708-08","nombre":"Carlos Vasquez","nota":3.9
+        "codigo":"201708-08","nombre":"Carlos Vasquez","nota":39
     },
     {
-        "codigo":"201708-09","nombre":"Pedro Garzon","nota":4.0
+        "codigo":"201708-09","nombre":"Pedro Garzon","nota":80
     },
     {
-        "codigo":"201708-10","nombre":"Luisa Romero","nota":2.8
+        "codigo":"201708-10","nombre":"Luisa Romero","nota":55
     }
 ];
 
@@ -97,5 +97,45 @@ function _func_notaMenor(){
     }
     else{
         alert("Debe llenar la lista de estudiantes primero")
+    }
+};
+
+
+//Calcular si aprobo curso
+//Aprueba con puntaje mayor o igual a 60
+function _func_aprobo(){
+    if (listaEstudiantesLlena == true){
+        _obtenerNotas();
+        var notaaprobacion = 60
+        for (var i = 0; i < json_estudiantes.length; i++) {
+            if (json_estudiantes[i].nota >= notaaprobacion){
+            document.getElementById("aprobo"+i).innerHTML = "SI";
+            }
+            else{
+                document.getElementById("aprobo"+i).innerHTML = "NO";
+            }
+        }
+    }
+    else{
+        alert("Debe llenar la lista de estudiantes primero")
+    }
+};
+
+
+function _func_restablecer(){
+    if (listaEstudiantesLlena == true){
+        for (var i = 0; i < json_estudiantes.length; i++) {
+            document.getElementById("codigo"+i).innerHTML = "";
+            document.getElementById("nombre"+i).innerHTML = "";
+            document.getElementById("nota"+i).innerHTML = "";
+            document.getElementById("aprobo"+i).innerHTML = "";            
+        }
+        document.getElementById("nota_mayor_val").innerHTML = "";
+        document.getElementById("nota_menor_val").innerHTML = "";
+        document.getElementById("Nota_prom_val").innerHTML = "";
+        listaEstudiantesLlena = false;
+    }
+    else{
+        alert("El formulario esta en blanco, no hay datos para restablecer")
     }
 };
