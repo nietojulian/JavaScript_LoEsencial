@@ -4,11 +4,147 @@
     <meta content="text/html"; charset="utf-8"/>
     <meta name="author" content="Julian Nieto">
 		<meta name="descripiton" content="Evaluación Final JavaScript -Lo esencial - Julian Nieto">
-    <link rel="stylesheet" href="css/estilos.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximun-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/custom.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <title>Evaluación Final JavaScript -Lo esencial</title>
   </head>
 
   <body>
-    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/notaestudiantes.js"></script>
+
+    <!--Titulo-->
+
+
+        <div class="card-panel teal lighten-2">
+          <div class="row">
+            <div class="col l2 center-align " >
+              <img class="respomsive-img z-depth-3" src="imagenes/notas.jpg" alt="" width="200px">
+            </div>
+            <div class="col l10 center-align " >
+              <span class="white-text text-darken-2"><h3>Notas Estudiantes</h3></span>
+            </div>
+          </div>
+        </div>
+
+    <!--Contenedor para la barra de navegacion-->
+    <div class="col m9">
+      <nav>
+        <div class="nav-wrapper white">
+          <ul id="nav-mobile" class="right hide-on-small-and-down">
+            <li><a id="btn1" onclick="_func_estudiantes()" class="waves-effect waves-light btn">Estudiantes <i class="material-icons right">directions_run</i></a></li>
+            <li><a id="btn2" onclick="_func_notaPromedio()" class="waves-effect waves-light btn">Nota Promedio <i class="material-icons right">format_line_spacing</i></a></li>
+            <li><a id="btn3" onclick="_func_notaMayor()" class="waves-effect waves-light btn">Nota Mayor <i class="material-icons right">call_made</i></a></li>
+            <li><a id="btn4" onclick="_func_notaMenor()" class="waves-effect waves-light btn">Nota Menor <i class="material-icons right">call_received</i></a></li>
+            <li><a id="btn5" onclick="_func_notapasa()" class="waves-effect waves-light btn">Nota de 3 o mas <i class="material-icons right">call_received</i></a></li>
+            <li><a id="btn6" onclick="_func_notapierde()" class="waves-effect waves-light btn">Nota menor de 3 <i class="material-icons right">call_received</i></a></li>
+
+            <!--iconos: functions, gesture, import_export, multiline_chart-->
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <!--Contenedor para la tabla de estuduantes y calculos de notas-->
+    <div class="row">
+
+      <!--Columna para Tabla de estudiantes-->
+      <div class="col l6 m6 s12 center-align " >
+        <div class="card">
+          <table id="estudiantes" class="striped">
+            <thead>
+              <tr>
+                <th>Codigo</th>
+                <th>Nombre</th>
+                <th>Nota</th>
+              </tr>
+             </thead>
+             <tbody>
+               <tr>
+                 <td id="codigo0"></td>
+                 <td id="nombre0"></td>
+                 <td id="nota0"></td>
+               </tr>
+               <tr>
+                 <td id="codigo1"></td>
+                 <td id="nombre1"></td>
+                 <td id="nota1"></td>
+               </tr>
+               <tr>
+                 <td id="codigo2"></td>
+                 <td id="nombre2"></td>
+                 <td id="nota2"></td>
+               </tr>
+               <tr>
+                 <td id="codigo3"></td>
+                 <td id="nombre3"></td>
+                 <td id="nota3"></td>
+               </tr>
+               <tr>
+                 <td id="codigo4"></td>
+                 <td id="nombre4"></td>
+                 <td id="nota4"></td>
+               </tr>
+               <tr>
+                 <td id="codigo5"></td>
+                 <td id="nombre5"></td>
+                 <td id="nota5"></td>
+               </tr>
+               <tr>
+                 <td id="codigo6"></td>
+                 <td id="nombre6"></td>
+                 <td id="nota6"></td>
+               </tr>
+               <tr>
+                 <td id="codigo7"></td>
+                 <td id="nombre7"></td>
+                 <td id="nota7"></td>
+               </tr>
+               <tr>
+                 <td id="codigo8"></td>
+                 <td id="nombre8"></td>
+                 <td id="nota8"></td>
+               </tr>
+               <tr>
+                 <td id="codigo9"></td>
+                 <td id="nombre9"></td>
+                 <td id="nota9"></td>
+               </tr>
+             </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!--Columna para Calculo de Notas-->
+      <div class="col l6 m6 s12 center-align" >
+        <div class="card">
+          <table id="estudiantes" class="striped">
+            <thead>
+              <tr>
+                <th>Descripcion</th>
+                <th>Nota</th>
+              </tr>
+             </thead>
+             <tbody>
+               <tr>
+                 <td id="nota_prom">Nota Promedio</td>
+                 <td id="Nota_prom_val"></td>
+               </tr>
+               <tr>
+                 <td id="nota_prom">Nota Mayor</td>
+                 <td id="Nota_prom_val"></td>
+               </tr>
+               <tr>
+                 <td id="nota_prom">Nota Menor</td>
+                 <td id="Nota_prom_val"></td>
+               </tr>
+             </tbody>
+           </table>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
